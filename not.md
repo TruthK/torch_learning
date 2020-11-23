@@ -26,4 +26,5 @@
 
 # Image Inpainting via Generative Multi-column Convolutional Neural Neworks
 在特征提取方面，提出了一种生成多列的CNN结构，因为多列结构可以将图像分解成具有不同感受野和特征分辨率的分量。在寻找相似块方面，提出了一种隐式多样化马尔可夫随机场（ID-MRF）项，但只将其作为正则化项。在综合辅助信息方面，设计了一种新的置信驱动的重建损失，根据空间位置约束生成内容。
+![生成多列卷积神经网络](https://raw.githubusercontent.com/TruthK/torch_learning/master/note_image/%E7%94%9F%E6%88%90%E5%A4%9A%E5%88%97%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png)
 
