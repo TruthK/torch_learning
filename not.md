@@ -26,5 +26,9 @@
 
 # Image Inpainting via Generative Multi-column Convolutional Neural Neworks
 在特征提取方面，提出了一种生成多列的CNN结构，因为多列结构可以将图像分解成具有不同感受野和特征分辨率的分量。在寻找相似块方面，提出了一种隐式多样化马尔可夫随机场（ID-MRF）项，但只将其作为正则化项。在综合辅助信息方面，设计了一种新的置信驱动的重建损失，根据空间位置约束生成内容。
-![生成多列卷积神经网络](https://raw.githubusercontent.com/TruthK/torch_learning/master/note_image/%E7%94%9F%E6%88%90%E5%A4%9A%E5%88%97%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png)
+![生成多列卷积神经网络](https://raw.githubusercontent.com/TruthK/torch_learning/master/note_image/%E7%94%9F%E6%88%90%E5%A4%9A%E5%88%97%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png)  
+首先，作者采用具有扩展卷积的多分支CNN，而不是单分支。在三个不同的分支中使用了三个不同的内核大小，以实现各种接收场并以不同的分辨率提取特征。
+其次，引入了两个新的损失项来训练网络，即置信驱动的重建损失和隐式多样化马尔可夫随机场（ID-MRF）损失。置信驱动的重建损失是加权的L 1损失，而ID-MRF损失与预训练的VGG网络计算的特征补丁比较有关。
 
+# 
+CNN的结构无法有效地建模缺失区域与遥远空间位置所给出的信息之间的长期相关性。如果您熟悉CNN，则应该知道内核大小和膨胀率控制卷积层的接收场，并且网络必须越来越深入，才能看到整个输入图像。这意味着，如果要捕获图像的上下文，则必须依赖更深的图层，但是由于较深的图层始终具有较小的特征空间尺寸，因此我们会丢失空间信息。
